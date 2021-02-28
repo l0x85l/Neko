@@ -158,6 +158,6 @@ public class CosmeticUser {
 
 
     public String getUpdateText() {
-        return NekoSelf.START_PREFIX + name + "::" + cape + "::" + hat + "::" + bandana + "::" + wing + "::" + halo + "::";
+        return NekoSelf.START_PREFIX + name + "::" + cape + "::" + hat + "::" + bandana + "::" + wing + "::" + halo;
     }
 }
