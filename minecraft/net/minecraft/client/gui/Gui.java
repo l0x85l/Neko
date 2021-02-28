@@ -45,6 +45,14 @@ public class Gui
         drawRect(x, startY + 1, x + 1, endY, color);
     }
 
+    public void drawHollowRect(int x, int y, int w, int h, int c) {
+        drawHorizontalLine(x, x + w, y, c);
+        drawHorizontalLine(x, x + w, y + h, c);
+
+        drawVerticalLine(x, y + h, y, c);
+        drawVerticalLine(x + w, y + h, y, c);
+    }
+
     /**
      * Draws a solid color rectangle with the specified coordinates and color (ARGB format). Args: x1, y1, x2, y2, color
      */
@@ -250,13 +258,5 @@ public class Gui
         worldrenderer.pos((double)(x + width), (double)y, 0.0D).tex((double)((u + (float)uWidth) * f), (double)(v * f1)).endVertex();
         worldrenderer.pos((double)x, (double)y, 0.0D).tex((double)(u * f), (double)(v * f1)).endVertex();
         tessellator.draw();
-    }
-
-    public void drawHollowRect(int x, int y, int w, int h, int c) {
-        drawHorizontalLine(x, x + w, y, c);
-        drawHorizontalLine(x, x + w, y + h, c);
-
-        drawVerticalLine(x, y + h, y, c);
-        drawVerticalLine(x + w, y + h, y, c);
     }
 }

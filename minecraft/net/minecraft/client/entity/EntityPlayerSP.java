@@ -96,7 +96,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
     private int positionUpdateTicks;
     private boolean hasValidHealth;
     private String clientBrand;
-    public CustomMovementInput movementInput;
+    public NMovementInput movementInput;
     protected Minecraft mc;
 
     /**
@@ -162,7 +162,7 @@ public class EntityPlayerSP extends AbstractClientPlayer
      * Called to update the entity's position/logic.
      */
     public void onUpdate()
-    {
+    {	
         if (this.worldObj.isBlockLoaded(new BlockPos(this.posX, 0.0D, this.posZ)))
         {
             super.onUpdate();
@@ -289,13 +289,15 @@ public class EntityPlayerSP extends AbstractClientPlayer
     /**
      * Sends a chat message from the player. Args: chatMessage
      */
-    public void sendChatMessage(String message) {
-        if (CommandManager.isCommand(message)) {
+    public void sendChatMessage(String message)
+    {
+        if (CommandManager.isCommand(message)){
             final Command cmd = CommandManager.findCommand(message);
+
             if (cmd.getExecutor() != null){
                 cmd.getExecutor().execute(this, CommandManager.getArgs(message));
             }
-        } else {
+        }else{
             this.sendQueue.addToSendQueue(new C01PacketChatMessage(message));
         }
     }

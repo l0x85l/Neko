@@ -17,7 +17,6 @@ import org.apache.logging.log4j.LogManager;
 import org.apache.logging.log4j.Logger;
 import org.jibble.pircbot.IrcException;
 import org.lwjgl.opengl.Display;
-import sun.plugin2.message.EventMessage;
 
 import java.io.IOException;
 import java.util.HashMap;
@@ -34,6 +33,10 @@ public class Neko {
     private NekoSelf ircSelf;
     private CosmeticUser currentUser;
     private HashMap<String, CosmeticUser> cosmeticMap;
+
+    public Neko() {
+    }
+
 
     public static Neko getInstance() {
         return INSTANCE == null ? (INSTANCE = new Neko()) : INSTANCE;
@@ -108,5 +111,6 @@ public class Neko {
     }
 
 
-    public void stop() {}
+    public void stop() {
+    }
 }

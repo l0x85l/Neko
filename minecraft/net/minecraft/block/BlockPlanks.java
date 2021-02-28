@@ -56,7 +56,7 @@ public class BlockPlanks extends Block
      */
     public MapColor getMapColor(IBlockState state)
     {
-        return ((BlockPlanks.EnumType)state.getValue(VARIANT)).func_181070_c();
+        return ((BlockPlanks.EnumType)state.getValue(VARIANT)).getMapColor();
     }
 
     /**
@@ -85,7 +85,7 @@ public class BlockPlanks extends Block
         private final int meta;
         private final String name;
         private final String unlocalizedName;
-        private final MapColor field_181071_k;
+        private final MapColor mapColor;
 
         private EnumType(int p_i46388_3_, String p_i46388_4_, MapColor p_i46388_5_)
         {
@@ -97,7 +97,7 @@ public class BlockPlanks extends Block
             this.meta = p_i46389_3_;
             this.name = p_i46389_4_;
             this.unlocalizedName = p_i46389_5_;
-            this.field_181071_k = p_i46389_6_;
+            this.mapColor = p_i46389_6_;
         }
 
         public int getMetadata()
@@ -105,9 +105,9 @@ public class BlockPlanks extends Block
             return this.meta;
         }
 
-        public MapColor func_181070_c()
+        public MapColor getMapColor()
         {
-            return this.field_181071_k;
+            return this.mapColor;
         }
 
         public String toString()

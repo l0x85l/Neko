@@ -25,7 +25,6 @@ public class HUDConfigScreen extends GuiScreen {
     private final HashMap<IRenderer, ScreenPosition> renderers = new HashMap<IRenderer, ScreenPosition>();
     private Optional<IRenderer> selectedRenderer = Optional.empty();
     private int prevX, prevY;
-    private int scrollAmount = 0;
 
     @Override
     public void initGui() {

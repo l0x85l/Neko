@@ -377,7 +377,7 @@ public class GuiPlayerTabOverlay extends Gui
         this.header = headerIn;
     }
 
-    public void func_181030_a()
+    public void resetFooterHeader()
     {
         this.header = null;
         this.footer = null;

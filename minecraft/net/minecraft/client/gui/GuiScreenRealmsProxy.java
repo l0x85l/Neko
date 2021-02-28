@@ -38,9 +38,16 @@ public class GuiScreenRealmsProxy extends GuiScreen
         super.drawCenteredString(this.fontRendererObj, p_154325_1_, p_154325_2_, p_154325_3_, p_154325_4_);
     }
 
-    public void func_154322_b(String p_154322_1_, int p_154322_2_, int p_154322_3_, int p_154322_4_)
+    public void func_154322_b(String p_154322_1_, int p_154322_2_, int p_154322_3_, int p_154322_4_, boolean p_154322_5_)
     {
-        super.drawString(this.fontRendererObj, p_154322_1_, p_154322_2_, p_154322_3_, p_154322_4_);
+        if (p_154322_5_)
+        {
+            super.drawString(this.fontRendererObj, p_154322_1_, p_154322_2_, p_154322_3_, p_154322_4_);
+        }
+        else
+        {
+            this.fontRendererObj.drawString(p_154322_1_, p_154322_2_, p_154322_3_, p_154322_4_);
+        }
     }
 
     /**
@@ -173,7 +180,7 @@ public class GuiScreenRealmsProxy extends GuiScreen
 
     public void func_154328_b(RealmsButton p_154328_1_)
     {
-        super.buttonList.remove(p_154328_1_);
+        super.buttonList.remove(p_154328_1_.getProxy());
     }
 
     /**
