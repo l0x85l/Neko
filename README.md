@@ -1,2 +1,2 @@
 # Neko
- Minecraft 1.8.8 based pvp client
+ Minecraft 1.8.9 based pvp client
